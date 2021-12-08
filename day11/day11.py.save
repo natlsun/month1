@@ -1,0 +1,47 @@
+
+#1
+dir='''
+bin    dev   lib    libx32      mnt   root  snap      sys  var
+boot   etc   lib32  lost+found  opt   run   srv       tmp
+cdrom  home  lib64  media       proc  sbin  swapfile  usr
+'''
+with open("nbas.txt",'w') as f:
+	f.write(dir)
+with open("nbas.txt",'r') as ff:
+	print(ff.read())
+
+#2
+i=input("введите логин:")
+with open('nba.txt' , 'a') as f:
+	f.write(i)
+with open('nba.txt','r')as ff:
+	print(ff.read())
+a=input("введите пароль:")
+with open('nba.txt' , 'a') as l:
+	l.write(a)
+with open('nba.txt' , 'r') as ll:
+	print(ll.read())
+#3
+with open('nba.txt' , 'r') as l:
+	if "w" in l.read():
+		print("да, в тексте есть w")
+	else:
+		print("нет, в тексте нет w")
+#4
+a='''
+Python is a widely used high-level programming language for general-purpose
+programming, created by Guido van Rossum and first released in 1991. An interpreted
+language, Python has a design philosophy that emphasizes code readability (notably
+using whitespace indentation to delimit code blocks rather than curly brackets or
+keywords), and a syntax that allows programmers to express concepts in fewer lines of
+code than might be used in languages such as C++ or Java.
+'''
+with open('kier.txt', 'a') as ff:
+	ff.write(a)
+with open('kier.txt', 'r') as f:
+	for i in f.read().split():
+		if "T" in i or "t" in i:
+			list_t_word(i)
+		else:
+			print("err")
+print()
